@@ -54,6 +54,9 @@ ifeq ($(UNAME_S),Darwin)
     endif
 endif
 #CFLAGS     = -g -Wall -Wno-parentheses -std=c++20 -DNSPACE=$(NSPACE) -DSOLVERNAME=$(SOLVERNAME) -DVERSION=$(VERSION)
+ifeq ($(SOLVERDIR),glucose4.1)
+    CFLAGS += -Wno-sign-compare -Wno-reorder -Wno-unused-value
+endif
 ifeq ($(VERSION),simp)
 DEPDIR     += simp
 CFLAGS     += -DSIMP=1 
