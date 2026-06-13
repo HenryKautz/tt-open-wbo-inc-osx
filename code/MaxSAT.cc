@@ -857,7 +857,7 @@ lbool MaxSAT::searchSATSolver(Solver *S, vec<Lit> &assumptions, bool pre) {
 	if (verbosity > 3) 
 	{
 		printf("c Calling SAT with the following %d assumptions:", assumptions.size());
-		for (int i = 0; i < assumptions.size(); ++i) printf(" %d", (int)assumptions[i]);
+		for (int i = 0; i < assumptions.size(); ++i) printf(" %d", assumptions[i].x);
 		printf("\n");
 	}	
 

@@ -122,7 +122,7 @@ void Adder::adderTree (Solver *S, std::vector< std::queue< Lit > > & buckets, ve
 // xs and ys must have the same size
 
 void Adder::lessThanOrEqual (Solver *S, vec< Lit > & xs, std::vector< uint64_t > & ys) {
-  assert ( xs.size() == ys.size() );
+  assert ( (size_t)xs.size() == ys.size() );
   vec<Lit> clause;
   bool skip;
   for ( int i = 0; i < (int)xs.size(); ++i ) {
@@ -168,7 +168,7 @@ void Adder::lessThanOrEqual (Solver *S, vec< Lit > & xs, std::vector< uint64_t >
 }
 
 void Adder::lessThanOrEqualInc (Solver *S, vec< Lit > & xs, std::vector< uint64_t > & ys, vec<Lit>& assumptions) {
-  assert ( xs.size() == ys.size() );
+  assert ( (size_t)xs.size() == ys.size() );
   vec<Lit> clause;
   bool skip;
   for ( int i = 0; i < (int)xs.size(); ++i ) {
