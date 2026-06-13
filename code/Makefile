@@ -68,6 +68,9 @@ endif
 endif
 include $(MROOT)/mtl/template.mk
 
+install: $(EXEC)
+	cp $(EXEC) ~/bin/
+
 # Suppress warnings in third-party solver internals only
 SOLVER_NOWARN = -Wno-strict-aliasing -Wno-class-memaccess -Wno-misleading-indentation
 $(MROOT)/topor/%.o $(MROOT)/topor/%.op $(MROOT)/topor/%.od $(MROOT)/topor/%.or: CFLAGS += $(SOLVER_NOWARN)
