@@ -68,8 +68,13 @@ endif
 endif
 include $(MROOT)/mtl/template.mk
 
-install: $(EXEC)
-	cp $(EXEC) ~/bin/
+install:
+	$(MAKE) clean
+	$(MAKE)
+	cp ../bin/tt-open-wbo-inc-IntelSATSolver ~/bin/
+	$(MAKE) clean SOLVERDIR=glucose4.1 SOLVERNAME='"Glucose4_1"' NSPACE=Glucose
+	$(MAKE) SOLVERDIR=glucose4.1 SOLVERNAME='"Glucose4_1"' NSPACE=Glucose
+	cp ../bin/tt-open-wbo-inc-Glucose4_1 ~/bin/
 
 # Suppress warnings in third-party solver internals only
 SOLVER_NOWARN = -Wno-strict-aliasing -Wno-class-memaccess -Wno-misleading-indentation
